@@ -1,5 +1,6 @@
 package com.github.wnuq.car.sales;
 
+import com.github.wnuq.car.sales.api.OrderFacade;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class OrderConfiguration {
 
     @Bean
-    public OrderService orderService(OrderRepository orderRepository) {
-        return new OrderService(orderRepository);
+    public OrderFacade orderService(OrderRepository orderRepository) {
+        return new OrderFacade(orderRepository);
     }
 }

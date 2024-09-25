@@ -1,11 +1,12 @@
-package com.github.wnuq.car.sales;
+package com.github.wnuq.car.sales.api;
 
+import com.github.wnuq.car.sales.OrderRepository;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
 
 @AllArgsConstructor
-public class OrderService {
+public class OrderFacade {
 
     private final OrderRepository orderRepository;
 

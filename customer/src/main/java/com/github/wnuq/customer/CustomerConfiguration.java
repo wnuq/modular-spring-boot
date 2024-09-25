@@ -1,6 +1,6 @@
 package com.github.wnuq.customer;
 
-import com.github.wnuq.car.sales.OrderService;
+import com.github.wnuq.car.sales.api.OrderFacade;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class CustomerConfiguration {
 
     @Bean
-    public CustomerService customerService(OrderService orderService, CustomerRepository customerRepository) {
-        return new CustomerService(orderService, customerRepository);
+    public CustomerService customerService(OrderFacade orderFacade, CustomerRepository customerRepository) {
+        return new CustomerService(orderFacade, customerRepository);
     }
 }

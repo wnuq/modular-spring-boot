@@ -1,7 +1,7 @@
 package com.github.wnuq.customer;
 
-import com.github.wnuq.car.sales.OrderDto;
-import com.github.wnuq.car.sales.OrderService;
+import com.github.wnuq.car.sales.api.OrderDto;
+import com.github.wnuq.car.sales.api.OrderFacade;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CustomerService {
 
-    private OrderService orderService;
+    private OrderFacade orderFacade;
 
     private CustomerRepository customerRepository;
 
@@ -24,7 +24,7 @@ public class CustomerService {
     }
 
     public List<OrderDto> getCustomerOrders(Long customerId) {
-        return orderService.getOrders().stream()
+        return orderFacade.getOrders().stream()
                 .filter(order -> order.customerId().equals(customerId))
                 .collect(Collectors.toList());
     }
