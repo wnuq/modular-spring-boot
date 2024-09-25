@@ -14,6 +14,7 @@ public class OrderService {
                 .map(order -> new OrderDto(
                         order.getId(),
                         order.getCarId(),
+                        order.getCustomerId(),
                         order.getStatus()
                 ))
                 .toList();

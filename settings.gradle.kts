@@ -1,3 +1,3 @@
 rootProject.name = "spring-modular"
 
-include("car-sales")
+include("car-sales", "customer")
